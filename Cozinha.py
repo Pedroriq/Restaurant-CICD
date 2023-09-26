@@ -17,9 +17,9 @@ class Cozinha:
         self.tipo_pedido = {
             "carbonara": "cozimento",
             "lasanha": "forno",
-            "espaguete à bolonhesa": "cozimento",
+            "espaguete a bolonhesa": "cozimento",
             "sushi": "preparo a frio",
-            "hambúrguer": "chapa",
+            "hamburguer": "chapa",
             "pizza": "forno",
             "salada Caesar": "montagem",
             "frango grelhado": "churrasqueira",
@@ -48,7 +48,7 @@ class Cozinha:
 
     def cozinhar(self, pedido, hora_inicio):
         for key, value in self.tipo_pedido.items():
-            if pedido.lower() == key:
+            if pedido.lower() == key.lower():
                 self.pedido_ser_preparado = pedido
                 tipo = value.strip().replace(" ", "_")
                 pedido_ready = eval(f"self.{tipo}()")
@@ -56,7 +56,7 @@ class Cozinha:
                 tempo_de_preparo = datetime.strptime(
                     horario_fim, "%H:%M:%S"
                 ) - datetime.strptime(hora_inicio, "%H:%M:%S")
-                return pedido_ready, tempo_de_preparo
+                return pedido_ready, tempo_de_preparo.seconds
             else:
                 pass
 
