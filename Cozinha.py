@@ -8,7 +8,7 @@ def preparo(pedido, tempo, tipo):
     return pedido
 
 
-def cancelar_pedido(pedido, mesa):
+def cancelar_pedido_na_cozinha(pedido, mesa):
     print(f"Pedido {pedido} da mesa {mesa} cancelado")
 
 
@@ -59,3 +59,5 @@ class Cozinha:
                 return pedido_ready, tempo_de_preparo
             else:
                 pass
+
+        return None, None

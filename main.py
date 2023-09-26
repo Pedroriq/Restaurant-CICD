@@ -12,6 +12,6 @@ if __name__ == "__main__":
         "carbonara", datetime.now().strftime("%H:%M:%S")
     )
 
-    # cliente.cancelar_pedido(pedido_ready)
+    cliente_1.cancelar_pedido(pedido_ready_1)
 
     cliente_1.pagar(ten4cent=True)

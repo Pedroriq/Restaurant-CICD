@@ -1,4 +1,4 @@
-from Cozinha import Cozinha, cancelar_pedido
+from Cozinha import Cozinha, cancelar_pedido_na_cozinha
 
 
 class Cliente:
@@ -18,6 +18,7 @@ class Cliente:
         }
         self.valor_da_conta = 0
         self.descricao_produtos = []
+        self.cozinha_object = Cozinha()
 
     def pedido_pronto(self, pedido_ready, tempo_de_preparo):
         if pedido_ready:
@@ -34,8 +35,7 @@ class Cliente:
             self.valor_da_conta -= preco
 
     def fazer_um_pedido(self, pedido, horario):
-        cozinha_object = Cozinha()
-        pedido_ready, tempo_de_preparo = cozinha_object.cozinhar(
+        pedido_ready, tempo_de_preparo = self.cozinha_object.cozinhar(
             pedido=pedido, hora_inicio=horario
         )
         if pedido_ready is not None:
@@ -49,7 +49,7 @@ class Cliente:
             return None, None
 
     def cancelar_pedido(self, pedido):
-        cancelar_pedido(pedido, self.mesa)
+        cancelar_pedido_na_cozinha(pedido, self.mesa)
         preco = self.preco_pedido.get(pedido)
         self.descricao_produtos.remove({pedido: preco})
         self.__calculo_mesa__(preco, "sub")
@@ -64,5 +64,7 @@ class Cliente:
 
         print(f"Pedidos: {round(self.valor_da_conta, 2)}")
         print(f"Gorjeta: {tip}")
-        print(f"O total da conta foi: {round(self.valor_da_conta, 2) + tip}")
+        print(
+            f"O total da conta foi: {round(round(self.valor_da_conta, 2) + tip, 2)}"
+        )
         return round(self.valor_da_conta, 2) + tip
