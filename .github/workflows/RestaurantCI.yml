@@ -68,7 +68,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      EMAIL_LIST: pedrohrsilveira@yahoo.com.br
+      EMAIL_LIST: pedrohrsilveira@hotmail.com
 
     steps:
       - name: Executa comandos
@@ -106,7 +106,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      EMAIL_LIST: pedrohrsilveira@yahoo.com.br
+      EMAIL_LIST: pedrohrsilveira@hotmail.com
 
     steps:
       - name: Executa comandos
