@@ -74,7 +74,7 @@ jobs:
 
       - name: Build com pyinstaller
         run: |
-          wine pyinstaller --onefile main.py 
+          wine Python311/Lib/Scripts/pyinstaller --onefile main.py 
 
 
       - name: Upload de artefatos
