@@ -3,7 +3,7 @@ import io
 from unittest import TestCase
 from unittest.mock import patch
 
-from Cozinha import Cozinha, cancelar_pedido_na_cozinha
+from restaurant.Cozinha import Cozinha, cancelar_pedido_na_cozinha
 
 
 class MyTestCase(TestCase):

@@ -1,4 +1,4 @@
-from Cozinha import Cozinha, cancelar_pedido_na_cozinha
+from restaurant.Cozinha import Cozinha, cancelar_pedido_na_cozinha
 
 
 class Cliente:

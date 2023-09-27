@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from Cliente import Cliente
+from restaurant.Cliente import Cliente
 
 if __name__ == "__main__":
     counter = 0
