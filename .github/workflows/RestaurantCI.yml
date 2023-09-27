@@ -63,19 +63,11 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Instalando dependências para build
-        run: |
-          sudo dpkg --add-architecture i386
-          sudo apt-get update
-          sudo apt-get install wine32 wine64
-          sudo apt-get install python3-pip 
-          wine --version 
-          pip3 install pyinstaller 
-
       - name: Build com pyinstaller
         run: |
-          wine ~/.local/bin/pyinstaller.py seu_script.py
-
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pyinstaller --onefile main.py
 
       - name: Upload de artefatos
         uses: actions/upload-artifact@v3
