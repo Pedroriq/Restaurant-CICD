@@ -69,6 +69,7 @@ jobs:
           pip install -r requirements.txt
           pyinstaller --onefile main.py
           cd dist
+          ls
 
       - name: Upload de artefatos
         uses: actions/upload-artifact@v3
