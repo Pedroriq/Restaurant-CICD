@@ -73,6 +73,6 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: exe
-          path: /target/*.exe
+          path: dist/*.exe
   
   
