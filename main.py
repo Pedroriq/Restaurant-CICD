@@ -52,6 +52,7 @@ if __name__ == "__main__":
                     else:
                         ten4cent = False
                     cliente.pagar(ten4cent)
+                    print("\n-----------------------------------------------\n")
                 else:
                     break
 
