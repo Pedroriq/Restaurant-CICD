@@ -71,7 +71,6 @@ jobs:
           sudo apt-get install python3-pip 
           wine --version 
           pip3 install pyinstaller 
-          wine ~/.local/bin/pyinstaller main.py 
 
       - name: Build com pyinstaller
         run: |
