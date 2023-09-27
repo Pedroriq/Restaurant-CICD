@@ -55,7 +55,10 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: tests
-        path: report.html
+        path: |
+          report.html
+          assets
+        
 
 
   notificacao_test:
@@ -65,7 +68,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      EMAIL_LIST: pedrohrsilveira@hotmail.com
+      EMAIL_LIST: pedrohrsilveira@yahoo.com.br
 
     steps:
       - name: Executa comandos
