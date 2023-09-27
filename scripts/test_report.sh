@@ -8,3 +8,4 @@ mkdir test
 mv report.html assets test/
 zip -r test.zip test/
 cat test.zip | mail -s "Test_Report_Restaurant" ${EMAIL_LIST} -A test.zip
+echo "Email enviado"
